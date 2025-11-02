@@ -42,6 +42,22 @@ public class Person {
         this.lastName = lastName;
     }
 
+    public void loanBook(Book book) {
+        if (book.isAvailable()) {
+            if (bookCount < borrowedBooks.length) {
+                borrowedBooks[bookCount] = book;
+                bookCount++;
+                book.setBorrower(this);
+                System.out.println(firstName + " borrowed \"" + book.getTitle() + "\"");
+            } else {
+                System.out.println(firstName + " cannot borrow more books (limit reached).");
+            }
+        } else {
+            System.out.println("Sorry, \"" + book.getTitle() + "\" is not available.");
+        }
+    }
+
+
 
 
     // todo: needs completion
