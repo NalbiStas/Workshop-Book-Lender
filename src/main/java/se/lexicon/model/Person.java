@@ -56,6 +56,31 @@ public class Person {
             System.out.println("Sorry, \"" + book.getTitle() + "\" is not available.");
         }
     }
+    public void returnBook(Book book) {
+        boolean found = false;
+
+        for (int i = 0; i < bookCount; i++) {
+            if (borrowedBooks[i] == book) {
+                found = true;
+                for (int j = i; j < bookCount - 1; j++) {
+                    borrowedBooks[j] = borrowedBooks[j + 1];
+                }
+                borrowedBooks[bookCount - 1] = null;
+                bookCount--;
+                book.setBorrower(null);
+                System.out.println(firstName + " returned \"" + book.getTitle() + "\"");
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println(firstName + " does not have \"" + book.getTitle() + "\"");
+        }
+    }
+    public String getPersonInformation() {
+        return firstName + " " + lastName + " (ID: " + id + ")";
+    }
+
 
 
 
