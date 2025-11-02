@@ -18,5 +18,31 @@ public class Person {
         this.bookCount = 0;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public Book[] getBorrowedBooks() {
+        return this.borrowedBooks;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+
+
     // todo: needs completion
 }
