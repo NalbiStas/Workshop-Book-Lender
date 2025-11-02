@@ -80,6 +80,17 @@ public class Person {
     public String getPersonInformation() {
         return firstName + " " + lastName + " (ID: " + id + ")";
     }
+    public void showBorrowedBooks() {
+        System.out.println(firstName + "'s borrowed books:");
+        if (bookCount == 0) {
+            System.out.println("  None");
+        } else {
+            for (int i = 0; i < bookCount; i++) {
+                System.out.println("  - " + borrowedBooks[i].getTitle());
+            }
+        }
+    }
+
 
 
 
