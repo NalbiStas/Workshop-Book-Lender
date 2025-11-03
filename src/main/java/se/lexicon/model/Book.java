@@ -29,7 +29,7 @@ public class Book {
 
     public void setBorrower(Person borrower) {
         this.borrower = borrower;
-        this.available = (borrower == null); //
+        this.available = (borrower == null);
     }
 
 
